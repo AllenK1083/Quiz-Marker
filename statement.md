@@ -1,11 +1,20 @@
-# Welcome!
+answers = ["C", "B", "C", "A", "D", "A", "B", "D", "D", "C"]
 
-This Python template lets you get started quickly with a simple one-page playground.
+responses = ["C", "B", "C", "A", "D", "A", "B", "D", "D", "C"]
 
-```python runnable
-print('Hello World!')
-```
+if responses[-1] == answers[len(responses)-1]:
+  correct = True
+else:
+  correct = False
 
-# Advanced usage
+if not correct:
+  del responses[-1]
+  print("Sorry, please try the last question again!")
 
-If you want a more complex example (external libraries, viewers...), use the [Advanced Python template](https://tech.io/select-repo/429)
+elif len(responses) < len(answers):
+  print('Quiz not complete.')
+  correct = string(len(responses))
+  print("You've got " + correct + " answers correct so far, please add an answer for the next question.")
+
+else:
+  print("Well done, you have completed the quiz!")
